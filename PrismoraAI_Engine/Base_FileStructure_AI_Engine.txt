@@ -1,0 +1,42 @@
+PrismoraAI/
+│
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   │
+│   ├── core/
+│   │   ├── __init__.py
+│   │   └── config.py
+│   │
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── v1/
+│   │   │   ├── __init__.py
+│   │   │   ├── router.py
+│   │   │   └── endpoints/
+│   │   │       ├── __init__.py
+│   │   │       ├── health.py
+│   │   │       ├── transcribe.py          # existing
+│   │   │       └── highlight_generate.py     # NEW endpoint
+│   │   │       └── summarize.py     # NEW endpoint
+│   │
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── transcribe_service.py
+│   │   ├── summarization_service.py            
+│   │   ├── highlight_generation_service.py            
+│   │
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   ├── transcribe.py
+│   │   ├── summarize.py
+│   │   ├── highlight_generate.py
+│   │
+│   └── utils/
+│       ├── __init__.py
+│       ├── file_utils.py
+│       └── audio_utils.py                 # NEW → optional helper for prosody extraction (librosa)
+│
+├── requirements.txt
+├── .env
+└── README.md

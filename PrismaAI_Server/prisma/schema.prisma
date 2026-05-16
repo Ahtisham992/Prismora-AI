@@ -1,0 +1,241 @@
+// -------------------------
+// Prisma Client Generator
+// -------------------------
+generator client {
+  provider = "prisma-client-js"
+}
+
+// -------------------------
+// Database Connection
+// -------------------------
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ------------------------------------------------------
+// USER MODEL
+// ------------------------------------------------------
+model User {
+  id Int @id @default(autoincrement())
+
+  // Basic profile
+  firstName    String
+  lastName     String
+  username     String  @unique
+  bio          String?
+  email        String  @unique
+  phoneNumber  String?
+  profilePhoto String?
+
+  // Authentication
+  password     String?
+  googleId     String?      @unique
+  provider     AuthProvider @default(LOCAL)
+  refreshToken String?
+
+  // Relations
+  posts             Post[]
+  comments          Comment[]
+  commentLikes      CommentLike[]
+  postLikes         PostLike[]
+  bookmarks         Bookmark[]
+  reports           Report[]
+  following         Follow[]       @relation("Following")
+  followers         Follow[]       @relation("Followers")
+  notifications     Notification[]
+  notificationsSent Notification[] @relation("NotificationActor")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ------------------------------------------------------
+// POST MODEL (Podcast Highlight)
+// ------------------------------------------------------
+model Post {
+  id           Int     @id @default(autoincrement())
+  videoUrl     String
+  thumbnailUrl String
+  title        String
+  description  String?
+  duration     Int
+
+  // Categories (multiple allowed)
+  categories String[]
+
+  // Interaction counters
+  likes         Int @default(0)
+  dislikes      Int @default(0)
+  commentsCount Int @default(0)
+  shares        Int @default(0)
+  views         Int @default(0)
+
+  // Relations
+  creatorId Int
+  creator   User @relation(fields: [creatorId], references: [id])
+
+  comments  Comment[]
+  postLikes PostLike[]
+  bookmarks Bookmark[]
+  reports   Report[]
+  summary   PostSummary?
+
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  notifications Notification[]
+}
+
+// ------------------------------------------------------
+// COMMENTS SYSTEM
+// ------------------------------------------------------
+model Comment {
+  id     Int    @id @default(autoincrement())
+  text   String
+  postId Int
+  userId Int
+  likes  Int    @default(0)
+
+  post Post @relation(fields: [postId], references: [id])
+  user User @relation(fields: [userId], references: [id])
+
+  likedBy CommentLike[]
+
+  createdAt     DateTime       @default(now())
+  notifications Notification[]
+}
+
+model CommentLike {
+  id        Int @id @default(autoincrement())
+  userId    Int
+  commentId Int
+
+  user    User    @relation(fields: [userId], references: [id])
+  comment Comment @relation(fields: [commentId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, commentId])
+}
+
+// ------------------------------------------------------
+// LIKES / DISLIKES SYSTEM
+// ------------------------------------------------------
+model PostLike {
+  id     Int     @id @default(autoincrement())
+  userId Int
+  postId Int
+  isLike Boolean // true = like, false = dislike
+
+  user User @relation(fields: [userId], references: [id])
+  post Post @relation(fields: [postId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, postId])
+}
+
+// ------------------------------------------------------
+// BOOKMARK SYSTEM
+// ------------------------------------------------------
+model Bookmark {
+  id     Int @id @default(autoincrement())
+  userId Int
+  postId Int
+
+  user User @relation(fields: [userId], references: [id])
+  post Post @relation(fields: [postId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, postId])
+}
+
+// ------------------------------------------------------
+// FOLLOW SYSTEM
+// ------------------------------------------------------
+model Follow {
+  id          Int @id @default(autoincrement())
+  followerId  Int
+  followingId Int
+
+  follower  User @relation("Followers", fields: [followerId], references: [id])
+  following User @relation("Following", fields: [followingId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@unique([followerId, followingId])
+}
+
+// ------------------------------------------------------
+// REPORTING SYSTEM
+// ------------------------------------------------------
+model Report {
+  id             Int     @id @default(autoincrement())
+  postId         Int
+  reporterId     Int
+  reason         String
+  additionalInfo String?
+
+  post     Post @relation(fields: [postId], references: [id])
+  reporter User @relation(fields: [reporterId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+// ------------------------------------------------------
+// SUMMARY STORAGE (Optional, used if caching AI summaries)
+// ------------------------------------------------------
+model PostSummary {
+  id        Int     @id @default(autoincrement())
+  postId    Int     @unique
+  keyPoints String?
+  fullText  String?
+  topics    String?
+  duration  String?
+
+  post Post @relation(fields: [postId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+model Notification {
+  id Int @id @default(autoincrement())
+
+  // Receiver
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+
+  // Actor (who triggered it)
+  actorId Int
+  actor   User @relation("NotificationActor", fields: [actorId], references: [id])
+
+  // Optional references
+  postId Int?
+  post   Post? @relation(fields: [postId], references: [id])
+
+  commentId Int?
+  comment   Comment? @relation(fields: [commentId], references: [id])
+
+  type   NotificationType
+  isRead Boolean          @default(false)
+
+  createdAt DateTime @default(now())
+
+  @@index([userId, isRead])
+}
+
+// ------------------------------------------------------
+// ENUMS
+// ------------------------------------------------------
+enum AuthProvider {
+  LOCAL
+  GOOGLE
+}
+
+enum NotificationType {
+  LIKE
+  COMMENT
+  FOLLOW
+  COMMENT_LIKE
+}

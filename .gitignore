@@ -1,0 +1,87 @@
+# ══════════════════════════════════════════════════════════════════
+# PRISMORA AI — Root .gitignore
+# ══════════════════════════════════════════════════════════════════
+
+# ── OS Files ─────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# ── IDEs / Editors ───────────────────────────────────────────────
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# ── Environment Variables (NEVER commit secrets) ─────────────────
+.env
+.env.*
+!.env.example
+
+# ── Python ───────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+ENV/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+.mypy_cache/
+.pytest_cache/
+.coverage*
+htmlcov/
+.tox/
+.nox/
+
+# ── Node.js ──────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.tsbuildinfo
+
+# ── Build Outputs ────────────────────────────────────────────────
+dist/
+build/
+*.jsbundle
+
+# ── Logs ─────────────────────────────────────────────────────────
+logs/
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# ── ML Models & Large Files ──────────────────────────────────────
+models/
+**/models/
+**/*.bin
+**/*.pt
+**/*.pth
+**/*.onnx
+**/*.safetensors
+
+# ── Media Downloads & Generated Files ────────────────────────────
+downloads/
+highlights/
+cookies.txt
+oauth_cache/
+
+# ── Misc ─────────────────────────────────────────────────────────
+.temp/
+.tmp/
+.cache/
+coverage/
+*.bak
+*.orig

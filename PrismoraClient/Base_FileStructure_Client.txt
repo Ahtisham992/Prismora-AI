@@ -1,0 +1,101 @@
+project-root/
+├── android/
+├── ios/
+├── src/
+│   ├── api/
+│   │   ├── client.ts
+│   │   └── endpoints.ts
+│   │
+│   ├── assets/
+│   │   ├── fonts/
+│   │   ├── images/
+│   │   └── icons/
+│   │
+│   ├── components/
+│   │   ├── atoms/
+│   │   ├── layout/
+│   │   └── molecules/
+│   │   └── organisms/
+│   │
+│   ├── config/
+│   │   ├── constants.ts
+│   │   ├── env.ts
+│   │   ├── colors.ts
+│   │   ├── typography.ts
+│   │   └── spacing.ts
+│   │   └── radius.ts
+│   │   └── shadows.ts
+│   │
+│   ├── hooks/
+│   │   ├── useTheme.ts
+│   │   └── useDarkMode.ts
+│   │   └── useAppInitialization.tsx
+│   │
+│   ├── navigation/
+│   │   ├── stacks/
+│   │   │   ├── AddStack.tsx
+│   │   │   ├── AppStack.tsx
+│   │   │   ├── AuthStack.tsx
+│   │   │   ├── DiscoverStack.tsx
+│   │   │   ├── HomeStack.tsx
+│   │   │   ├── NotificationsStack.tsx
+│   │   │   ├── OnboardingStack.tsx
+│   │   │   ├── ProfileStack.tsx
+│   │   │   ├── SplashStack.tsx
+│   │   ├── tabs/
+│   │   │   ├── components/
+│   │   │   │   ├── AddTabButton.tsx
+│   │   │   │   ├── TabConfig.tsx
+│   │   │   │   ├── TabIcon.tsx
+│   │   │   └── BottomTabNavigator.tsx
+│   │   ├── RootNavigator.tsx
+│   ├── screens/
+│   │   ├── Auth/
+│   │   │   ├── LoginScreen.tsx
+│   │   │   └── SignupScreen.tsx
+│   │   ├── Home/
+│   │   │   └── HomeScreen.tsx
+│   │   └── Settings/
+│   │       └── SettingsScreen.tsx
+│   │
+│   ├── services/
+│   │   ├── authService.ts
+│   │
+├── store/
+│   ├── index.ts             # Final combined Zustand store
+│   │
+│   ├── auth/                # Each domain gets its own slice folder
+│   │   ├── authSlice.ts
+│   │   ├── authTypes.ts
+│   │   └── authSelectors.ts (optional)
+│   │
+│   ├── user/
+│   │   ├── userSlice.ts
+│   │   ├── userTypes.ts
+│   │   └── userSelectors.ts
+│   │
+│   ├── styles/
+│   │   ├── theme/
+│   │   │   ├── light.ts
+│   │   │   ├── dark.ts
+│   │   │   └── index.ts
+│   │   ├── GlobalStyles.ts
+│   │   └── helpers.ts
+│   │
+│   ├── types/
+│   │   ├── theme.d.ts
+│   │   └── models.ts
+│   │
+│   ├── utils/
+│   │   ├── helpers.ts
+│   │   └── formatters.ts
+│   │
+│   ├── App.tsx
+│   └── index.ts
+│
+├── .env
+├── .eslintrc.js
+├── .prettierrc.js
+├── tsconfig.json
+├── package.json
+└── README.md

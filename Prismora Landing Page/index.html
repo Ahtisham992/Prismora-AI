@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prismora AI — From Hours of Podcast to Seconds of Reels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Animated Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Global SVG Gradients for Icons -->
+  <svg width="0" height="0" style="position:absolute;">
+    <defs>
+      <linearGradient id="icon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#6F30C6" />
+        <stop offset="100%" stop-color="#B06FFF" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a href="#" class="nav-brand">
+      <img src="logo.png" alt="Prismora AI" class="nav-logo-icon">
+      Prismora AI
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#tech">Tech Stack</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="https://github.com/Ahtisham992/PrismaAI_Server/releases/download/v1.0/app-release.apk"
+          class="nav-cta">Download APK</a></li>
+    </ul>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Final Year Project · FAST NUCES · 2026
+    </div>
+
+    <h1>
+      Learn in minutes,<br />
+      <span class="gradient-text">not hours</span>
+    </h1>
+
+    <p class="hero-sub">
+      Prismora AI processes long podcasts with a single URL — generating transcripts, AI summaries, and shareable
+      highlight reels in seconds.
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://github.com/Ahtisham992/PrismaAI_Server/releases/download/v1.0/app-release.apk"
+        class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
+        Download APK
+      </a>
+      <a href="#demo" class="btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <polygon points="10 8 16 12 10 16 10 8" />
+        </svg>
+        Live Demo
+      </a>
+    </div>
+
+    <!-- Phone Mockup -->
+    <div class="hero-visual">
+      <div class="phone-wrapper">
+        <!-- Floating badges -->
+        <div class="float-badge fb1">
+          <span class="badge-icon">
+            <svg class="theme-icon">
+              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+              <line x1="12" x2="12" y1="19" y2="22" />
+            </svg>
+          </span>
+          Podcast URL → Reel
+        </div>
+        <div class="float-badge fb2">
+          <span class="badge-icon">
+            <svg class="theme-icon">
+              <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+          </span>
+          AI-Powered
+        </div>
+        <div class="float-badge fb3">
+          <span class="badge-icon">
+            <svg class="theme-icon">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </span>
+          Searchable Transcripts
+        </div>
+        <div class="float-badge fb4">
+          <span class="badge-icon">
+            <svg class="theme-icon">
+              <path
+                d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+              <path d="M5 3v4" />
+              <path d="M19 17v4" />
+              <path d="M3 5h4" />
+              <path d="M17 19h4" />
+            </svg>
+          </span>
+          Smart Highlights
+        </div>
+
+        <!-- Secondary phone -->
+        <div class="phone secondary" style="transform: rotate(-5deg) translateY(30px);">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-header">My Feed</div>
+            <div class="phone-reel-thumb">
+              <div class="reel-play-btn"></div>
+            </div>
+            <div class="phone-card">
+              <div class="phone-card-title">Top Highlights</div>
+              <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:4px;">
+                <span class="phone-tag">AI</span>
+                <span class="phone-tag">Tech</span>
+                <span class="phone-tag">Education</span>
+              </div>
+            </div>
+            <div class="phone-reel-thumb">
+              <div class="reel-play-btn"></div>
+            </div>
+          </div>
+          <div class="phone-glow"></div>
+        </div>
+
+        <!-- Main phone -->
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-header">Processing Podcast</div>
+            <div class="phone-card">
+              <div class="phone-card-title">Transcribing...</div>
+              <div class="phone-waveform">
+                <div class="wave-bar" style="height:8px;animation-delay:0s"></div>
+                <div class="wave-bar" style="height:14px;animation-delay:0.1s"></div>
+                <div class="wave-bar" style="height:20px;animation-delay:0.2s"></div>
+                <div class="wave-bar" style="height:10px;animation-delay:0.3s"></div>
+                <div class="wave-bar" style="height:18px;animation-delay:0.4s"></div>
+                <div class="wave-bar" style="height:8px;animation-delay:0.5s"></div>
+                <div class="wave-bar" style="height:16px;animation-delay:0.6s"></div>
+                <div class="wave-bar" style="height:12px;animation-delay:0.7s"></div>
+                <div class="wave-bar" style="height:20px;animation-delay:0.8s"></div>
+                <div class="wave-bar" style="height:6px;animation-delay:0.9s"></div>
+                <div class="wave-bar" style="height:14px;animation-delay:1.0s"></div>
+                <div class="wave-bar" style="height:18px;animation-delay:1.1s"></div>
+              </div>
+              <div class="phone-highlight-bar">
+                <div class="phone-highlight-fill"></div>
+              </div>
+              <div class="phone-progress-text">Whisper ASR · 73% complete</div>
+            </div>
+            <div class="phone-card">
+              <div class="phone-card-title">Key Highlights Found</div>
+              <div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap;">
+                <span class="phone-tag">Clip 1 · 0:24</span>
+                <span class="phone-tag">Clip 2 · 1:45</span>
+                <span class="phone-tag">Clip 3 · 3:12</span>
+              </div>
+            </div>
+            <div class="phone-reel-thumb">
+              <div class="reel-play-btn"></div>
+            </div>
+            <div class="phone-card">
+              <div class="phone-card-title">AI Summary Ready
+                <svg class="theme-icon"
+                  style="width:12px;height:12px;vertical-align:middle;stroke:var(--acc);margin-left:4px;">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <div
+                style="height:4px;background:rgba(255,255,255,0.1);border-radius:2px;margin-top:6px;overflow:hidden;">
+                <div
+                  style="height:100%;width:100%;background:linear-gradient(90deg,var(--pri),var(--acc));border-radius:2px;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="phone-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num" data-count="3">0</div>
+      <div class="stat-label">Hours → Seconds</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-count="9">0</div>
+      <div class="stat-label">AI Modules</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-count="60">0</div>
+      <div class="stat-label">Survey Responses</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-count="4">0</div>
+      <div class="stat-label">Dev Iterations</div>
+    </div>
+  </div>
+
+  <!-- LIVE DEMO -->
+  <section class="demo-section" id="demo">
+    <div class="section-wrap">
+      <div class="demo-grid">
+        <div class="demo-content reveal">
+          <div class="section-chip">App Preview</div>
+          <h2 class="section-title">See Prismora AI<br />In Action</h2>
+          <p class="section-desc">Watch our application effortlessly transform long podcasts into smart, bite-sized
+            highlight reels with a highly intuitive mobile interface.</p>
+          <ul class="demo-features">
+            <li><span class="dot"></span> Real-time transcription preview</li>
+            <li><span class="dot"></span> Smart highlight reels generation</li>
+            <li><span class="dot"></span> Personalized feed exploration</li>
+          </ul>
+        </div>
+        <div class="demo-visual reveal">
+          <div class="emulator-wrapper">
+            <div class="phone-frame">
+              <div class="phone-case">
+                <div class="phone-screen">
+                  <video class="demo-video-inner" src="prismora_final.mp4" controls autoplay muted loop
+                    playsinline></video>
+                </div>
+              </div>
+            </div>
+            <div class="emulator-decor"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section" id="how">
+    <div class="section-wrap">
+      <div class="section-header reveal">
+        <div class="section-chip">Process</div>
+        <h2 class="section-title">From URL to Reel<br />in 6 Simple Steps</h2>
+        <p class="section-desc">Paste any podcast URL and let Prismora AI handle everything — transcription,
+          summarization, and highlight generation.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-icon-wrap">
+            <svg class="theme-icon grad" viewBox="0 0 24 24" style="width:48px;height:48px;">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="12" cy="12" r="10" stroke-width="1" stroke-dasharray="4 4" opacity="0.3" />
+            </svg>
+            <span class="step-num">1</span>
+          </div>
+          <div class="step-title">Upload URL</div>
+          <div class="step-desc">Paste any YouTube or podcast link. We fetch the media automatically.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon-wrap">
+            <svg class="theme-icon grad" viewBox="0 0 24 24" style="width:48px;height:48px;">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M14 2v6h6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M16 13H8M16 17H8M10 9H8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                opacity="0.5" />
+            </svg>
+            <span class="step-num">2</span>
+          </div>
+          <div class="step-title">Transcription</div>
+          <div class="step-desc">OpenAI Whisper converts speech to accurate, timestamped text.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon-wrap">
+            <svg class="theme-icon grad" viewBox="0 0 24 24" style="width:48px;height:48px;">
+              <path
+                d="M9.5 2a.5.5 0 0 1 .5.5v.357a2.5 2.5 0 0 1-1.161 2.1l-1.996 1.251a1 1 0 0 0-.343 1.397l1.25 2.016a1 1 0 0 1-.343 1.397"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M14.5 2a.5.5 0 0 0-.5.5v.357a2.5 2.5 0 0 0 1.161 2.1l1.996 1.251a1 1 0 0 1 .343 1.397l-1.25 2.016"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M12 12v.01M16 12v.01M8 12v.01M12 16v.01" stroke-width="3" stroke-linecap="round" opacity="0.6" />
+              <circle cx="12" cy="12" r="10" stroke-width="1" opacity="0.2" />
+            </svg>
+            <span class="step-num">3</span>
+          </div>
+          <div class="step-title">AI Summary</div>
+          <div class="step-desc">PEGASUS/BART NLP models extract key insights and summaries.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon-wrap">
+            <svg class="theme-icon grad" viewBox="0 0 24 24" style="width:48px;height:48px;">
+              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 17h5M17 7h5" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" opacity="0.4" />
+              <path d="m14 11-4-2v4l4-2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                fill="currentColor" fill-opacity="0.1" />
+            </svg>
+            <span class="step-num">4</span>
+          </div>
+          <div class="step-title">Keyframe Detection</div>
+          <div class="step-desc">OpenCV detects scene changes and visual events in the video.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon-wrap">
+            <svg class="theme-icon grad" viewBox="0 0 24 24" style="width:48px;height:48px;">
+              <circle cx="6" cy="6" r="3" stroke-width="2" />
+              <circle cx="6" cy="18" r="3" stroke-width="2" />
+              <line x1="20" y1="4" x2="8.12" y2="15.88" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <line x1="14.47" y1="14.48" x2="20" y2="20" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <line x1="8.12" y1="8.12" x2="12" y2="12" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <circle cx="17" cy="12" r="5" stroke-width="1" opacity="0.2" fill="currentColor" fill-opacity="0.05" />
+            </svg>
+            <span class="step-num">5</span>
+          </div>
+          <div class="step-title">Highlight Generation</div>
+          <div class="step-desc">NLP + CV fusion creates short, meaningful reel clips automatically.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon-wrap">
+            <svg class="theme-icon grad" viewBox="0 0 24 24" style="width:48px;height:48px;">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M12 18h.01M9 6h6M9 10h6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                opacity="0.5" />
+              <path d="m16 14 2 2 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                stroke="var(--acc)" />
+            </svg>
+            <span class="step-num">6</span>
+          </div>
+          <div class="step-title">Review & Share</div>
+          <div class="step-desc">Edit, post, and share your highlights directly from the mobile app.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="section-wrap">
+      <div class="section-header reveal">
+        <div class="section-chip">Features</div>
+        <h2 class="section-title">Everything You Need<br />to Master Podcasts</h2>
+        <p class="section-desc">A complete platform combining AI transcription, smart search, community curation, and
+          personalized feeds.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card large">
+          <div class="feature-icon">
+            <svg class="theme-icon grad" style="width:32px;height:32px;">
+              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+              <line x1="12" x2="12" y1="19" y2="22" />
+            </svg>
+          </div>
+          <div class="feature-title">AI Transcription with Timestamps</div>
+          <div class="feature-desc">Powered by OpenAI Whisper, every word is transcribed with precise timestamps. Search
+            any topic across all your podcasts instantly.</div>
+          <div class="large-card-visual">
+            <div class="transcript-lines">
+              <div class="t-line highlight" style="width:80%;animation-delay:0s"></div>
+              <div class="t-line" style="width:65%;animation-delay:0.2s"></div>
+              <div class="t-line highlight" style="width:90%;animation-delay:0.4s"></div>
+              <div class="t-line" style="width:55%;animation-delay:0.6s"></div>
+              <div class="t-line" style="width:75%;animation-delay:0.8s"></div>
+              <div class="t-line highlight" style="width:70%;animation-delay:1.0s"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg class="theme-icon grad" style="width:32px;height:32px;">
+              <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+          </div>
+          <div class="feature-title">Instant Highlight Reels</div>
+          <div class="feature-desc">Auto-generated short clips of the most impactful moments, exported as MP4/MOV.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg class="theme-icon grad" style="width:32px;height:32px;">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </div>
+          <div class="feature-title">Global Smart Search</div>
+          <div class="feature-desc">Full-text Elasticsearch search across all transcripts. Find any topic in any podcast
+            instantly.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg class="theme-icon grad" style="width:32px;height:32px;">
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="6" />
+              <circle cx="12" cy="12" r="2" />
+            </svg>
+          </div>
+          <div class="feature-title">Personalized Feed</div>
+          <div class="feature-desc">Collaborative filtering recommends content based on your listening history and
+            preferences.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg class="theme-icon grad" style="width:32px;height:32px;">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <div class="feature-title">Community Curation</div>
+          <div class="feature-desc">Upvote, annotate, and validate highlights collaboratively. Community-verified
+            accuracy.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="tech-section" id="tech">
+    <div class="section-wrap">
+      <div class="section-header reveal">
+        <div class="section-chip">Technology</div>
+        <h2 class="section-title">Tools & Technologies used.</h2>
+        <p class="section-desc">A 4-layer architecture combining the best AI, backend, and mobile technologies
+          available.</p>
+      </div>
+      <div class="tech-strip">
+        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+            alt="React Native" class="tech-logo"> React Native</div>
+        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg"
+            alt="NestJS" class="tech-logo"> NestJS</div>
+        <div class="tech-pill"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI"
+            class="tech-logo"> FastAPI</div>
+        <div class="tech-pill"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"
+            class="tech-logo"> PostgreSQL</div>
+        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/openai.svg" alt="Whisper ASR"
+            class="tech-logo"> Whisper ASR</div>
+        <div class="tech-pill"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
+            alt="Hugging Face" class="tech-logo"> Hugging Face</div>
+        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
+            alt="OpenCV" class="tech-logo"> OpenCV</div>
+        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/ffmpeg.svg" alt="FFmpeg"
+            class="tech-logo"> FFmpeg</div>
+        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/cloudinary.svg"
+            alt="Cloudinary" class="tech-logo"> Cloudinary</div>
+        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/elasticsearch.svg"
+            alt="Elasticsearch" class="tech-logo"> Elasticsearch</div>
+        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
+            alt="Redis" class="tech-logo"> Redis</div>
+        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+            alt="Firebase FCM" class="tech-logo"> Firebase FCM</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="compare-section" id="compare">
+    <div class="section-wrap">
+      <div class="section-header reveal">
+        <div class="section-chip">Comparison</div>
+        <h2 class="section-title">Why Prismora AI<br />Stands Apart</h2>
+        <p class="section-desc">We combine all the features that existing tools leave fragmented across multiple
+          platforms.</p>
+      </div>
+      <div class="table-responsive reveal">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th style="text-align:left;color:var(--muted)">Feature</th>
+              <th>Prismora AI</th>
+              <th>SimonSays</th>
+              <th>Otter</th>
+              <th>Vimeo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Automated Transcripts</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="cross">✗</span></td>
+            </tr>
+            <tr>
+              <td>Highlight Reels</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Community Curation</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="partial">Limited</span></td>
+            </tr>
+            <tr>
+              <td>Personalized Feed</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+            </tr>
+            <tr>
+              <td>AI-Powered Search</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="partial">Basic</span></td>
+              <td><span class="cross">✗</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="download-section" id="download">
+    <div class="section-wrap">
+      <div class="download-inner">
+        <div class="section-chip">Get the App</div>
+        <h2 class="download-title">Download Prismora AI<br />for Android</h2>
+        <p class="download-sub">Transform how you consume podcasts. Get the app, paste a URL, and get your highlight
+          reel in seconds.</p>
+        <div class="download-btns">
+          <a href="#" class="apk-btn"
+            onclick="alert('APK coming soon! Contact the team for early access.'); return false;">
+            <span class="apk-btn-icon">
+              <svg class="theme-icon" viewBox="0 0 24 24" style="width:24px;height:24px;stroke:var(--pri);">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke-width="2" />
+                <path d="M12 18h.01" stroke-width="3" stroke-linecap="round" />
+                <circle cx="12" cy="12" r="8" stroke-width="1" opacity="0.1" fill="currentColor" fill-opacity="0.05" />
+              </svg>
+            </span>
+            <div style="text-align:left;">
+              <div style="font-size:0.7rem;opacity:0.7;font-family:'DM Sans',sans-serif;font-weight:400;">Download</div>
+              <div>Prismora AI APK</div>
+            </div>
+          </a>
+          <a href="#features" class="apk-btn ghost">
+            <span class="apk-btn-icon">
+              <svg class="theme-icon" viewBox="0 0 24 24" style="width:24px;height:24px;stroke:white;">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8 7h8M8 11h8M8 15h4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  opacity="0.4" />
+              </svg>
+            </span>
+            <div style="text-align:left;">
+              <div style="font-size:0.7rem;opacity:0.7;font-family:'DM Sans',sans-serif;font-weight:400;">Explore</div>
+              <div>All Features</div>
+            </div>
+          </a>
+        </div>
+        <div class="version-badge">
+          <svg class="theme-icon" viewBox="0 0 24 24"
+            style="width:20px;height:20px;stroke:rgba(255,255,255,0.7);margin-right:8px;">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M6 12v5c3 3 9 3 12 0v-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="12" cy="10" r="3" stroke-width="1" opacity="0.2" fill="currentColor" fill-opacity="0.1" />
+          </svg>
+          FAST NUCES · Software Engineering · Session 2022–2026 · FYP
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team-section" id="team">
+    <div class="section-wrap">
+      <div class="section-header reveal">
+        <div class="section-chip">The Team</div>
+        <h2 class="section-title">Built by Passionate<br />Engineers</h2>
+        <p class="section-desc">A dedicated team of Software Engineering students at FAST NUCES, Islamabad.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">MA</div>
+          <div class="team-name">Muhammad Ahtisham</div>
+          <div class="team-id">22I-2690</div>
+          <div class="team-role">AI Engine · Frontend Development</div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">UG</div>
+          <div class="team-name">Usman Ghani</div>
+          <div class="team-id">22I-8796</div>
+          <div class="team-role">Routing Server · Backend Architecture</div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">AT</div>
+          <div class="team-name">Abdullah Tariq</div>
+          <div class="team-id">22I-2627</div>
+          <div class="team-role">Mobile App · System Integration</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Prismora AI" class="nav-logo-icon" style="width: 32px; height: 32px;">
+        Prismora AI
+      </div>
+      <div class="footer-copy">
+        © 2026 Prismora AI · From Hours of Podcast to Seconds of Reels
+      </div>
+      <div class="footer-nuces">
+        FAST NUCES · Islamabad<br />Software Engineering FYP
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

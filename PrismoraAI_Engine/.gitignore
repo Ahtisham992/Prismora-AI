@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+*.tmp
+
+# Environment
+.env
+.venv/
+venv/
+ENV/
+env/
+
+# FastAPI / Uvicorn
+*.log
+*.pid
+
+# Project build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Byte-compiled / cache
+*.DS_Store
+.cache/
+.mypy_cache/
+.pytest_cache/
+coverage.xml
+htmlcov/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+.coverage*
+.tox/
+.nox/
+
+# Local settings
+settings_local.py
+
+# Node (if using frontend in same repo)
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Docker
+docker-compose.override.yml
+
+# PyInstaller
+*.spec
+
+# downlads and highlightss
+downloads/
+highlights/
+
+# HuggingFace / Models
+models/
+**/models/
+**/*.bin
+
+cookies.txt
