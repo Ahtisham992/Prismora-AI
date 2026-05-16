@@ -10,6 +10,10 @@
 </p>
 
 <p align="center">
+  <a href="https://prismora-ai.netlify.app/"><img src="https://img.shields.io/badge/🌐_Live_Demo-prismora--ai.netlify.app-8B5CF6?style=for-the-badge" alt="Live Demo"/></a>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android"/>
   <img src="https://img.shields.io/badge/AI_Engine-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
   <img src="https://img.shields.io/badge/Backend-NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS"/>
