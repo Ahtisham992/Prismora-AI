@@ -68,6 +68,10 @@
 
 The platform consists of **four components**: an AI Engine, a Backend Server, a Mobile App, and a Landing Page.
 
+### 🎥 Demo
+
+https://github.com/user-attachments/assets/bc8fd6f7-a854-4b55-8f1a-bd95a813a93a
+
 ---
 
 ## ✨ Key Features
