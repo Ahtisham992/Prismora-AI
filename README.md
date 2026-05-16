@@ -618,19 +618,31 @@ Each sub-project requires its own `.env` file. Template `.env.example` files are
 <table>
   <tr>
     <td align="center">
-      <strong>Muhammad Ahtisham</strong><br/>
+      <a href="https://github.com/Ahtisham992">
+        <img src="https://github.com/Ahtisham992.png" width="120" style="border-radius:50%" alt="Muhammad Ahtisham"/><br/>
+        <strong>Muhammad Ahtisham</strong>
+      </a><br/>
       22I-2690<br/>
-      <em>AI Engine · Frontend Development</em>
+      <em>AI Engine · Frontend Development</em><br/>
+      <a href="https://github.com/Ahtisham992"><img src="https://img.shields.io/badge/-Ahtisham992-181717?style=flat-square&logo=github" alt="GitHub"/></a>
     </td>
     <td align="center">
-      <strong>Usman Ghani</strong><br/>
+      <a href="https://github.com/Usmaniac2003">
+        <img src="https://github.com/Usmaniac2003.png" width="120" style="border-radius:50%" alt="Usman Ghani"/><br/>
+        <strong>Usman Ghani</strong>
+      </a><br/>
       22I-8796<br/>
-      <em>Routing Server · Backend Architecture</em>
+      <em>Routing Server · Backend Architecture</em><br/>
+      <a href="https://github.com/Usmaniac2003"><img src="https://img.shields.io/badge/-Usmaniac2003-181717?style=flat-square&logo=github" alt="GitHub"/></a>
     </td>
     <td align="center">
-      <strong>Abdullah Tariq</strong><br/>
+      <a href="https://github.com/i222627-ui">
+        <img src="https://github.com/i222627-ui.png" width="120" style="border-radius:50%" alt="Abdullah Tariq"/><br/>
+        <strong>Abdullah Tariq</strong>
+      </a><br/>
       22I-2627<br/>
-      <em>Mobile App · System Integration</em>
+      <em>Mobile App · System Integration</em><br/>
+      <a href="https://github.com/i222627-ui"><img src="https://img.shields.io/badge/-i222627--ui-181717?style=flat-square&logo=github" alt="GitHub"/></a>
     </td>
   </tr>
 </table>
